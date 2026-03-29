@@ -1,11 +1,11 @@
 {
-  "Thomas": {
+  "Andrew": {
     "salt": "02b09917236ac7a483fdafb730467fc7",
     "password": "1c40c068349dc767095758140508617d7a364f55b878ee1e4bc16058c472603e",
     "survey_completed": true,
     "preferences": {
       "category": "All",
-      "num_questions": 21,
+      "num_questions": 5,
       "confidence": 5
     }
   }

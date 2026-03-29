@@ -23,9 +23,23 @@ def load_questions():
     try:
         with open(QUESTIONS_FILE, "r") as f:
             data = json.load(f)
-        questions = data.get("questions", [])
-        if not questions:
+        raw = data.get("questions", [])
+        if not raw:
             print("  Warning: questions.json contains no questions.")
+            return []
+        questions = []
+        required = {"question", "type", "answer", "category"}
+        for i, q in enumerate(raw):
+            missing = required - q.keys()
+            if missing:
+                print(f"  Warning: question #{i + 1} skipped — missing fields: {', '.join(sorted(missing))}.")
+                continue
+            if q["type"] == "multiple_choice" and "options" not in q:
+                print(f"  Warning: question #{i + 1} skipped — multiple_choice question missing 'options'.")
+                continue
+            questions.append(q)
+        if not questions:
+            print("  Warning: no valid questions found after validation.")
         return questions
     except FileNotFoundError:
         print("  Error: questions.json not found.")
@@ -186,12 +200,11 @@ def _update_score(score, is_correct, streak):
 
 # ── Main quiz runner ───────────────────────────────────────────────────────────
 
-def run_quiz(username, preferences):
+def run_quiz(username, preferences, questions):
     """
     Run a full quiz session.
     Returns a result dict, or None if the quiz could not start.
     """
-    questions = load_questions()
     if not questions:
         print("\n  No questions available. Please check questions.json.")
         return None
@@ -248,7 +261,7 @@ def run_quiz(username, preferences):
             )
             print(f"\n  CORRECT! +{BASE_POINTS} points{streak_msg}  |  Score: {score}")
         else:
-            print(f"\n  WRONG. -{WRONG_PENALTY} points  |  Score: {score}")
+            print(f"\n  WRONG. -{abs(delta)} points  |  Score: {score}")
             print(f"  Correct answer: {question['answer']}")
 
         # AI feedback

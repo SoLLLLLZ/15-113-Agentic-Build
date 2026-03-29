@@ -5,7 +5,7 @@ menu.py - Handles survey, main menu, performance statistics, and account managem
 import getpass
 
 import account
-from quiz import load_questions, get_categories, run_quiz
+from quiz import get_categories, run_quiz
 
 
 # ── Survey ─────────────────────────────────────────────────────────────────────
@@ -185,6 +185,9 @@ def _change_username(username):
     if not new_name:
         print("  Username cannot be empty.")
         return False
+    if len(new_name) < 3:
+        print("  Username must be at least 3 characters.")
+        return False
 
     ok, msg = account.change_username(username, new_name)
     print(f"  {msg}")
@@ -195,14 +198,13 @@ def _change_username(username):
 
 # ── Main menu loop ─────────────────────────────────────────────────────────────
 
-def main_menu(username, preferences):
+def main_menu(username, preferences, questions):
     """
     Run the main menu loop.
+    Returns the current username (may differ if user changed it).
     Exits when the user chooses 'Exit' or when re-login is needed.
     """
     while True:
-        questions = load_questions()
-
         print(f"\n{'=' * 55}")
         print(f"  MAIN MENU   |   Logged in as: {username}")
         print(f"{'=' * 55}")
@@ -216,7 +218,7 @@ def main_menu(username, preferences):
         choice = input("\n  Choose an option (1–5): ").strip()
 
         if choice == "1":
-            result = run_quiz(username, preferences)
+            result = run_quiz(username, preferences, questions)
             if result:
                 account.update_user_stats(username, result)
             input("\n  Press Enter to return to the menu...")
@@ -232,11 +234,11 @@ def main_menu(username, preferences):
             updated_username = show_account(username)
             if updated_username is None:
                 # Username was changed; force re-login
-                return
+                return username
             username = updated_username
 
         elif choice == "5":
-            return
+            return username
 
         else:
             print("  Invalid choice. Please enter a number between 1 and 5.")

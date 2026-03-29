@@ -163,7 +163,7 @@ def main():
             account.update_preferences(username, preferences)
 
         # Run the main menu (loops until the user exits or changes username)
-        main_menu(username, preferences)
+        username = main_menu(username, preferences, questions)
 
         # After the menu exits, show goodbye and ask if another user wants to play
         _print_goodbye(username)

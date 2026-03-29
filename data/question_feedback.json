@@ -2,6 +2,16 @@
   "Thomas": {
     "In Python, indentation is optional and only used for readability.": "liked",
     "Which is generally faster for membership testing in Python?": "liked",
-    "What is the time complexity of accessing an element by index in a Python list?": "disliked"
+    "What is the time complexity of accessing an element by index in a Python list?": "disliked",
+    "What is the output of `[x**2 for x in range(4)]`?": "liked",
+    "A Python dictionary maintains insertion order as of Python 3.7.": "liked",
+    "What will `type(3.14)` return?": "liked",
+    "What does the `*args` syntax in a function definition allow you to do?": "liked"
+  },
+  "Andrew": {
+    "What keyword is used to check membership in a list or string (e.g. `'a' ___ 'cat'`)?": "disliked",
+    "In a CSV file, what character is typically used to separate values?": "disliked",
+    "In a JSON object, what data type are keys always?": "liked",
+    "In Python, indentation is optional and only used for readability.": "disliked"
   }
 }
