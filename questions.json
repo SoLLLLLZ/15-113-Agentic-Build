@@ -1,0 +1,150 @@
+{
+  "questions": [
+    {
+      "question": "What keyword is used to define a function in Python?",
+      "type": "multiple_choice",
+      "options": ["func", "define", "def", "function"],
+      "answer": "def",
+      "category": "Python Basics"
+    },
+    {
+      "question": "A list in Python is immutable.",
+      "type": "true_false",
+      "answer": "false",
+      "category": "Data Structures"
+    },
+    {
+      "question": "What built-in function returns the number of items in a list?",
+      "type": "short_answer",
+      "answer": "len",
+      "category": "Python Basics"
+    },
+    {
+      "question": "Which of the following is a valid way to create a comment in Python?",
+      "type": "multiple_choice",
+      "options": ["// this is a comment", "/* this is a comment */", "# this is a comment", "-- this is a comment"],
+      "answer": "# this is a comment",
+      "category": "Python Basics"
+    },
+    {
+      "question": "What will `type(3.14)` return?",
+      "type": "multiple_choice",
+      "options": ["int", "float", "str", "double"],
+      "answer": "float",
+      "category": "Python Basics"
+    },
+    {
+      "question": "In Python, indentation is optional and only used for readability.",
+      "type": "true_false",
+      "answer": "false",
+      "category": "Python Basics"
+    },
+    {
+      "question": "What keyword is used to check membership in a list or string (e.g. `'a' ___ 'cat'`)?",
+      "type": "short_answer",
+      "answer": "in",
+      "category": "Python Basics"
+    },
+    {
+      "question": "What will `print(10 % 3)` output?",
+      "type": "short_answer",
+      "answer": "1",
+      "category": "Python Basics"
+    },
+    {
+      "question": "Which data structure does NOT allow duplicate values?",
+      "type": "multiple_choice",
+      "options": ["list", "tuple", "set", "dictionary value"],
+      "answer": "set",
+      "category": "Data Structures"
+    },
+    {
+      "question": "What is the correct way to access the value associated with key 'name' in a dictionary `d`?",
+      "type": "multiple_choice",
+      "options": ["d.name", "d['name']", "d->name", "d(name)"],
+      "answer": "d['name']",
+      "category": "Data Structures"
+    },
+    {
+      "question": "Tuples are ordered and can be changed after creation.",
+      "type": "true_false",
+      "answer": "false",
+      "category": "Data Structures"
+    },
+    {
+      "question": "What method would you use to add an item to the end of a list?",
+      "type": "short_answer",
+      "answer": "append",
+      "category": "Data Structures"
+    },
+    {
+      "question": "A Python dictionary maintains insertion order as of Python 3.7.",
+      "type": "true_false",
+      "answer": "true",
+      "category": "Data Structures"
+    },
+    {
+      "question": "What does the `*args` syntax in a function definition allow you to do?",
+      "type": "multiple_choice",
+      "options": [
+        "Pass a dictionary of keyword arguments",
+        "Pass any number of positional arguments",
+        "Unpack a list into variables",
+        "Define default argument values"
+      ],
+      "answer": "Pass any number of positional arguments",
+      "category": "Python Advanced"
+    },
+    {
+      "question": "Which of the following correctly defines a list comprehension that returns even numbers from 0 to 9?",
+      "type": "multiple_choice",
+      "options": [
+        "[x for x in range(10) if x % 2 = 0]",
+        "[x for x in range(10) if x % 2 == 0]",
+        "[x if x % 2 == 0 for x in range(10)]",
+        "{x for x in range(10) if x % 2 == 0}"
+      ],
+      "answer": "[x for x in range(10) if x % 2 == 0]",
+      "category": "Python Advanced"
+    },
+    {
+      "question": "What is the output of `[x**2 for x in range(4)]`?",
+      "type": "short_answer",
+      "answer": "[0, 1, 4, 9]",
+      "category": "Python Advanced"
+    },
+    {
+      "question": "Which is generally faster for membership testing in Python?",
+      "type": "multiple_choice",
+      "options": ["list", "tuple", "set", "string"],
+      "answer": "set",
+      "category": "Efficiency"
+    },
+    {
+      "question": "What is the time complexity of accessing an element by index in a Python list?",
+      "type": "multiple_choice",
+      "options": ["O(n)", "O(log n)", "O(1)", "O(n^2)"],
+      "answer": "O(1)",
+      "category": "Efficiency"
+    },
+    {
+      "question": "Using `''.join(list_of_strings)` is more efficient than concatenating strings in a loop with `+=`.",
+      "type": "true_false",
+      "answer": "true",
+      "category": "Efficiency"
+    },
+    {
+      "question": "In a CSV file, what character is typically used to separate values?",
+      "type": "multiple_choice",
+      "options": ["semicolon", "pipe", "comma", "tab"],
+      "answer": "comma",
+      "category": "Other"
+    },
+    {
+      "question": "In a JSON object, what data type are keys always?",
+      "type": "short_answer",
+      "answer": "string",
+      "category": "Other"
+    }
+  ]
+}
